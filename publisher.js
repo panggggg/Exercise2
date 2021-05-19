@@ -11,13 +11,17 @@ amqp.connect('amqp://localhost', (connError, connection) => {
         }
 
         const queue = "exercise2"
-        const msg = "Hello World"
+        const user = process.argv[2];
+        const msg = user
 
         channel.assertQueue(queue);
 
         channel.sendToQueue(queue, Buffer.from(msg));
 
-        console.log("[x] Message send: ", msg)
+        console.log("[x] Message send: ", msg);
+        console.log(user);
+
+
     });
 
     setTimeout(function () {
