@@ -1,6 +1,6 @@
 const amqp = require('amqplib/callback_api');
 
-amqp.connect('amqp://localhost', (connError, connection) => {
+amqp.connect('amqp://localhost:5674', (connError, connection) => {
     if (connError) {
         throw connError;
     }
