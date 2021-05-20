@@ -1,0 +1,27 @@
+version: '3'
+services: 
+    MONGODB:
+        image:  mongo:4.0
+        container_name: mongoDBNode
+        restart: always
+        ports: 
+            - 27018:27017
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: "root"
+            MONGO_INITDB_ROOT_PASSWORD: "root"
+            MONGO_INITDB_DATABASE: mynode
+        
+    REDIS:
+        image: redis
+        container_name: redisNode
+        restart: always
+        ports: 
+            - 6381:6379
+
+    RABBITMQ:
+        image: rabbitmq:3-management
+        container_name: Rabbitmq
+        restart: always
+        ports: 
+            - 15674:15672 #UI
+            - 5674:5672
