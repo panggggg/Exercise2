@@ -7,7 +7,7 @@
 
     bluebird.promisifyAll(redis)
 
-    const redisClientUri = "redis://localhost:6379?db=0"
+    const redisClientUri = "redis://localhost:6381?db=0"
     const redisClient = redis.createClient(redisClientUri)
     redisClient.on('error', err => {
         console.error(err)
@@ -24,7 +24,7 @@
         const dbo = db.db("mynode");
 
 
-        amqp.connect('amqp://localhost', (connError, connection) => {
+        amqp.connect('amqp://localhost:5674', (connError, connection) => {
             if (connError) {
                 throw connError;
             }
