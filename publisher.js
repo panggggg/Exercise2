@@ -11,8 +11,9 @@ amqp.connect('amqp://localhost', (connError, connection) => {
         }
 
         const queue = "exercise2"
-        const user = process.argv[2];
-        const msg = user
+        const user = process.argv.slice(2);
+        const a = [{ "name": user[0], "age": user[1] }]
+        const msg = JSON.stringify(a[0])
 
         channel.assertQueue(queue);
 
