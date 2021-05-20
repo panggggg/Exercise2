@@ -17,7 +17,7 @@
     // await redisClient.setAsync("Jim", "jim");
     // console.log(result)
     const MongoClient = require('mongodb').MongoClient;
-    const url = "mongodb://localhost:27017/";
+    const url = "mongodb://localhost:27018/";
 
     MongoClient.connect(url, function (err, db) {
         if (err) throw err;
